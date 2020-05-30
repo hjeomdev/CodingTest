@@ -1,3 +1,6 @@
+//BaekJoon1330
+//ÀÛ¼ºÀÚ : yazbyz
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 

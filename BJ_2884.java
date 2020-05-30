@@ -1,4 +1,4 @@
-//20200530 BaekJoon2753
+//BaekJoon2884
 //ÀÛ¼ºÀÚ : yazbyz
 
 import java.io.BufferedReader;
@@ -24,7 +24,7 @@ public class BJ_2884 {
 			H -= 1;
 			M += 60;
 			
-			if(H < 1) {
+			if(H < 0) {
 				H = 23;
 			}	
 		}
@@ -32,9 +32,7 @@ public class BJ_2884 {
 		
 		h = Integer.toString(H);
 		m = Integer.toString(M);
-		if(M == 0) {
-			m = "00";
-		}
+		
 		
 		System.out.println(h + " " + m);
 		

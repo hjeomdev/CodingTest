@@ -1,4 +1,4 @@
-//20200530 BaekJoon2753
+//BaekJoon14681
 //ÀÛ¼ºÀÚ : yazbyz
 
 import java.io.BufferedReader;

@@ -1,5 +1,6 @@
-//20200530 BaekJoon2753
+//BaekJoon2753
 //ÀÛ¼ºÀÚ : yazbyz
+//20200530
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

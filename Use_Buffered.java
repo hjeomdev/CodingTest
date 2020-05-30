@@ -1,7 +1,7 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader; //이 2개 import필수(java.io.*; 로 전부 받을수도 있다.)
-import java.util.StringTokenizer;
+//import java.io.BufferedReader;
+//import java.io.BufferedWriter;
+//import java.io.InputStreamReader; //이 2개 import필수(java.io.*; 로 전부 받을수도 있다.)
+//import java.util.StringTokenizer;
 
 public class Use_Buffered {
     public static void main(String []args) throws Exception { //예외처리 필수

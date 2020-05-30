@@ -1,5 +1,7 @@
+//BaekJoon9498
+//ÀÛ¼ºÀÚ : yazbyz
+
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class BJ_9498 {

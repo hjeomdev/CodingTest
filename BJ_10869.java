@@ -1,3 +1,6 @@
+//BaekJoon10869
+//ÀÛ¼ºÀÚ : yazbyz
+
 import java.util.Scanner;
 
 public class BJ_10869 {
