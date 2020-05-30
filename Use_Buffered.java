@@ -10,7 +10,7 @@ public class Use_Buffered {
     	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
         String s = br.readLine(); //입력받을값이 String일때
-        int A = br.read(); //입력받을값이 int일때
+        int A = br.read() - 48; //입력받을값이 int일때(1을 아스키코드로 받아서 int값49가 들어오기 때문에 주의하기)
         int B = Integer.parseInt(br.readLine()); //int값+엔터 까지 입력받을때
         
         
