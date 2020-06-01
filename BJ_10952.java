@@ -1,4 +1,4 @@
-//BaekJoon11022
+//BaekJoon10952
 //ÀÛ¼ºÀÚ : yazbyz
 //20200601
 
@@ -6,33 +6,29 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
-public class BJ_11022 {
+public class BJ_10952 {
 	public static void main(String []args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		int T;
-		int[][] array;
+		int A, B;
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		
-		T = Integer.parseInt(br.readLine());
-		
-		array = new int[T][3];
-		
-		for(int i = 0; i < T; i++) 
-		{
+		do {
 			String temp = br.readLine();
 			String[] arrTemp = temp.split(" ");
 			
-			array[i][0] = Integer.parseInt(arrTemp[0]);
-			array[i][1] = Integer.parseInt(arrTemp[1]);
-			array[i][2] = array[i][0] + array[i][1];
-		}
+			A = Integer.parseInt(arrTemp[0]);
+			B = Integer.parseInt(arrTemp[1]);
+			
+			list.add(A + B);
+		}while(A != 0 && B != 0);
 		
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		for(int i = 0 ; i < T; i++)
+		for(int i = 0; i < list.size() - 1; i++)
 		{
-			bw.write("Case #" + (i+1) + ": ");
-			bw.write(array[i][0] + " + " + array[i][1] +  " = " + array[i][2] + "\n");
+			bw.write(list.get(i) + "\n");
 		}
 		bw.flush();
 		bw.close();
