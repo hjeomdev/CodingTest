@@ -1,42 +1,34 @@
 //BaekJoon10951
 //작성자 : yazbyz
-//20200601
+//20200602
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class BJ_10951 {
 	public static void main(String []args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Scanner scan = new Scanner(System.in);
 		
-		int A, B;
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		
-		String temp = br.readLine();
-		String[] arrTemp = temp.split(" ");
-		do {
-			
-			
-			A = Integer.parseInt(arrTemp[0]);
-			B = Integer.parseInt(arrTemp[1]);
-			
-			list.add(A + B);
-			
-			temp = br.readLine();
-			if(temp == null)
-				break;
-			arrTemp = temp.split(" ");
-		}while(A == 0 && B ==0 );
-		
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		for(int i = 0; i < list.size() - 1; i++)
+		while(scan.hasNext())
 		{
-			bw.write(list.get(i) + "\n");
+			int A = scan.nextInt();
+			int B = scan.nextInt();
+			//String C = scan.nextLine();
+			
+			System.out.println(A + B);
+			//System.out.println(C);
 		}
-		bw.flush();
-		bw.close();
+		
+		/*
+		 * hasNext() 메소드는 입력된 토큰이 있으면 true를 반환한다.
+		 * 
+		 * scanner.next(), scanner.nextInt()는 
+		 * 토큰을 구분하는 공백, 줄바꿈은 읽지 않음.
+		 * 
+		 * scanner.nextInt() 메소드는 사용자 입력의 마지막 개행문자를 읽지 않고 
+		 * 개행문자 전까지만 숫자로 입력받음. 
+		 * scanner.nextLine()은 사용자의 입력을 String으로 받음.
+		 * 그래서 scanner.nextInt()다음에 scanner.nextLine()을 호출하면
+		 * scanner.nextLine()은 남아있는 개행문자를 입력받게 됨
+		 */
 	}
 }
