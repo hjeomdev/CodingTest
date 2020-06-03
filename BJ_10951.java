@@ -30,5 +30,6 @@ public class BJ_10951 {
 		 * 그래서 scanner.nextInt()다음에 scanner.nextLine()을 호출하면
 		 * scanner.nextLine()은 남아있는 개행문자를 입력받게 됨
 		 */
+		scan.close();
 	}
 }
