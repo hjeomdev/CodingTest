@@ -6,8 +6,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 public class BJ_1546 {
 	public static void main(String []args) throws Exception {
@@ -17,7 +15,7 @@ public class BJ_1546 {
 		int[] score;
 		int M = 1;
 		double[] newScore;
-		int newAverage;
+		double newAverage;
 		
 		N = Integer.parseInt(br.readLine());
 		
@@ -42,21 +40,18 @@ public class BJ_1546 {
 			}
 		}
 		
-		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		int total = 0;
+		double total = 0;
 		for(int i = 0; i < N; i++)
 		{
-			newScore[i] = (score[i]/M)*100;
-			bw.write(newScore[i]+"\n");
+			newScore[i] = ((double)score[i]/M)*100;
 			total += newScore[i];
 		}
 		
 		newAverage = total/N;
 	
-//		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		bw.write(Integer.toString(newAverage));
+		bw.write(Double.toString(newAverage));
 		
 		bw.flush();
 		bw.close();
