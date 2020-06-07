@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 
 public class BJ_8958 {
 	public static void main(String[] args) throws Exception{
@@ -31,24 +30,24 @@ public class BJ_8958 {
 		
 		for(int i = 0; i < N; i++)
 		{
-			int preScore = 1;
+			int combo = 1;
 			
 			for(int j = 0; j < array[i].length; j++)
 			{
 				if(array[i][j].equals("O")) 
 				{
-					if(preScore > 1)
+					if(combo == 1)
 					{
-						score[i] += preScore;
+						score[i]++;
 					} else {
-						preScore++;
-						score[i] += preScore;
+						score[i] += combo;
 					}
+					combo++;
 				}
 				
 				if(array[i][j].equals("X")) 
 				{
-					preScore = 0;
+					combo = 1;
 				}
 			}
 			
