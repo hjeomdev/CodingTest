@@ -1,11 +1,13 @@
-//BaekJoon4673
+//BaekJoon1065
 //ÀÛ¼ºÀÚ : yazbyz
 //20200617
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class BJ_4673 {
+public class BJ_1065 {
 	
 	static int N = 10000;
 	static int[] numbers = new int[N];
@@ -13,7 +15,7 @@ public class BJ_4673 {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		for(int i = 0; i < N; i++)
 		{
 			numbers[i] = i + 1;
