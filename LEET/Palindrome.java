@@ -1,6 +1,4 @@
-package palindromeNumber;
-
-class Solution {
+class Palindrome {
 	public static boolean isPalindrome(int x) {
        /*
 		// < 내 코드 전체 요약 : x를 문자열로 형변환해서 이용 >
