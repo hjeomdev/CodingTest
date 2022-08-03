@@ -11,13 +11,9 @@ def hanoi(n, a, b, c): # n개의 원반을 a에서 c로 이동하는데 b를 보
 # 하노이는 여전히 이해가 될듯 하면서도 안된다.. 이론은 이해가 가도 코드로 도출하는게 어렵다.
 # 실제로 이런 문제가 나오면 풀 수 있을까?
 
-def hanoi_total_count(n):
-    if n == 1:
-        print(1)
-    elif n == 2:
-        print(3)
-    else:
-        print(n * 2 + 1)
+sum = 1
+for i in range(n - 1):
+    sum = sum * 2 + 1
 
-hanoi_total_count(n)
+print(sum)
 hanoi(n, 1, 2, 3)

@@ -1,27 +1,24 @@
-def recursion(n, total):
-    global answer # 함수 내에서 전역변수 값을 변경하기 위해서 global 키워드를 사용해서 선언한다.
+def concat_dash_and_str(dash, str):
+    global answer  # 함수 내에서 전역변수 값을 변경하기 위해서 global 키워드를 사용해서 선언한다.
+    answer.append(dash)
+    answer.append(str)
 
+def recursion(n, total):
     dash = ""
     if n < total:
         dash = "____" * (total - n)
 
-    answer.append(dash)
-    answer.append("\"재귀함수가 뭔가요?\"\n")
+    concat_dash_and_str(dash, "\"재귀함수가 뭔가요?\"\n")
 
     if n <= 0:
-        answer.append(dash)
-        answer.append("\"재귀함수는 자기 자신을 호출하는 함수라네\"\n")
+        concat_dash_and_str(dash, "\"재귀함수는 자기 자신을 호출하는 함수라네\"\n")
     else:
-        answer.append(dash)
-        answer.append("\"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.\n")
-        answer.append(dash)
-        answer.append("마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.\n")
-        answer.append(dash)
-        answer.append("그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"\n")
+        concat_dash_and_str(dash, "\"잘 들어보게. 옛날옛날 한 산 꼭대기에 이세상 모든 지식을 통달한 선인이 있었어.\n")
+        concat_dash_and_str(dash, "마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.\n")
+        concat_dash_and_str(dash, "그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"\n")
         recursion(n - 1, total)
 
-    answer.append(dash)
-    answer.append("라고 답변하였지.\n")
+    concat_dash_and_str(dash, "라고 답변하였지.\n")
 
 
 n = int(input())
