@@ -1,58 +1,55 @@
 import sys
 from collections import deque
 
-
-def print_tree(case_num, count):
-    print('Case ', case_num, ': ', sep='', end='')
-
-    if count == 0:
-        print('No trees.')
-    elif count == 1:
-        print('There is one tree.')
-    elif count > 1:
-        print('A forest of', count, 'trees.', sep=' ')
-
-
-case = 1
+T = 1
 while True:
     n, m = map(int, sys.stdin.readline().rstrip().split())
     if n == 0 and m == 0:
         break
 
-    graph = [[] for _ in range(n + 1)]
-
+    tree = [[] for _ in range(n + 1)]
     for _ in range(m):
         v1, v2 = map(int, sys.stdin.readline().rstrip().split())
-        graph[v1].append(v2)
-        graph[v2].append(v1)
+        tree[v1].append(v2)
+        tree[v2].append(v1)
 
-    visited = [False] * (n + 1)  # 함수 안에서 방문기록을 관리하면 같은 트리를 여러번 카운트 하게 된다.
-    tree_count = 0
+    print("tree", tree)
+
+    # 트리가 되는 조건: 사이클이 없다 -> 그래프의 각 노드를 시작으로 트리를 훑으면서 사이클 여부를 확인해야 한다.
+    visited = [False] * (n + 1)
+    answer = 0
 
 
-    def is_tree(start):
+    def is_tree(graph, start):
         result = True
-
         dq = deque()
         dq.append(start)
-
         while dq:
             cur = dq.popleft()
             if visited[cur]:
                 result = False
             visited[cur] = True
-            for k in graph[cur]:
-                if not visited[k]:
-                    dq.append(k)
-
+            for nex in graph[cur]:
+                if not visited[nex]:
+                    dq.append(nex)
         return result
 
 
     for i in range(1, n + 1):
         if not visited[i]:
-            if is_tree(i):
-                tree_count += 1
+            if is_tree(tree, i):
+                answer += 1
 
-    print_tree(case, tree_count)
 
-    case += 1
+    def print_test_result():
+        print("Case ", T, ": ", sep='', end="")
+        if answer == 0:
+            print("No trees.")
+        elif answer == 1:
+            print("There is one tree.")
+        else:
+            print("A forest of", answer, "trees.", sep=' ')
+
+
+    print_test_result()
+    T += 1
